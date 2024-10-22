@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main(){
+    int num1, num2, escolha;
+    float resultado;
+  setlocale(LC_ALL, "Portuguese");
+
+    printf("Escolha uma operação: \n");
+    printf("1. adição (+)\n");
+    printf("2. subtração (-)\n");
+    printf("3. Multiplicação (*)\n");
+    printf("4. Divisão (/)\n");
+    printf("5. Resto da divisão (%)\n");
+    printf("Digite o Numero da operação desejado\n");
+    scanf("%d", &escolha);
+
+    printf("Digite o primeiro numero:");
+    scanf("%d",&num1);
+    printf("Digite o segundo numero");
+    scanf("%d", &num2);
+
+switch (escolha)
+{
+case 1:
+    resultado = num1 + num2;
+    printf("Resuldado da divisão : %.2f\n", resultado);
+    break;
+case 2:
+   resultado = num1 - num2;
+   printf("Resultado da subtração : %.2f\n", resultado);
+   break;
+case 3:
+   resultado = num1 * num2; 
+   printf("Resultado da multiplicação : %.2f\n", resultado);
+   break;
+case 4:
+    if (num2 != 0){
+        resultado = (float)num1 / num2;
+        printf("Resultado da divisão : %.2f\n", resultado);
+    }else {
+        printf("Erro:Divisão por zero não é permitida!\n");
+    }        
+    break;
+case 5:
+   if(num2 != 0){
+     resultado = num1 % num2;
+     printf("Resultado do resto da divisão : %.2f\n", resultado);
+   }else {
+      printf("Erro : Divisão por zero nao é permitida!\n");
+   }    
+   break;
+default:
+    printf("Operação inválida! \n");
+}
+   return 0;
+}
